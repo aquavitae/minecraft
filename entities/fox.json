@@ -453,7 +453,10 @@
       },
       "minecraft:breathable": {
         "totalSupply": 15,
-        "suffocateTime": 0
+        "suffocateTime": 0,
+        "breathes_air": true,
+        "breathes_water": true,
+        "breathes_solids": true
       },
       "minecraft:equip_item": {
       },

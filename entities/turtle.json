@@ -133,6 +133,7 @@
         "suffocate_time": 0,
         "breathes_water": true,
         "breathes_air": true,
+        "breathes_solids": true,
         "generates_bubbles": false
       },
       "minecraft:nameable": {
