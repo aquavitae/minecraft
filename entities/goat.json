@@ -363,7 +363,7 @@
       "minecraft:leashable": {
         "soft_distance": 4,
         "hard_distance": 6,
-        "max_distance": 10
+        "max_distance": 100
       },
       "minecraft:balloonable": {
       },
