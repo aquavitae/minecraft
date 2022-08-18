@@ -100,8 +100,8 @@
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 3,
-        "max": 3
+        "value": 30,
+        "max": 30
       },
       "minecraft:scale": {
         "value": 0.6

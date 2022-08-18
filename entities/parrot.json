@@ -160,8 +160,8 @@
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 6,
-        "max": 6
+        "value": 60,
+        "max": 60
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [

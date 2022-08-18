@@ -130,7 +130,7 @@
                   { "test" :  "is_family", "subject" : "other", "value" :  "sheep"},
                   { "test" :  "is_family", "subject" : "other", "value" :  "rabbit"},
                   { "test" :  "is_family", "subject" : "other", "value" :  "fox"}
-                ] 
+                ]
               },
               "max_dist": 16
             },
@@ -191,8 +191,8 @@
         "minecraft:is_tamed": {
         },
         "minecraft:health": {
-          "value": 20,
-          "max": 20
+          "value": 200,
+          "max": 200
         },
         "minecraft:color": {
           "value": 14
@@ -250,7 +250,7 @@
           "event": "minecraft:on_unleash",
           "target": "self"
         }
-      }, 
+      },
       "minecraft:balloonable": {
         "mass": 0.8
       },
@@ -270,8 +270,8 @@
         "height": 0.8
       },
       "minecraft:health": {
-        "value": 8,
-        "max": 8
+        "value": 80,
+        "max": 80
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
@@ -409,7 +409,7 @@
         "priority": 9,
         "look_distance": 8,
         "look_time": [ 2, 4 ],
-        "items": [ "bone", "porkchop", "cooked_porkchop", "chicken", "cooked_chicken", 
+        "items": [ "bone", "porkchop", "cooked_porkchop", "chicken", "cooked_chicken",
                    "beef", "cooked_beef", "rotten_flesh", "muttonraw", "muttoncooked", "rabbit", "cooked_rabbit" ]
       },
 

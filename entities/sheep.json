@@ -142,8 +142,8 @@
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 8,
-        "max": 8
+        "value": 80,
+        "max": 80
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
@@ -162,7 +162,7 @@
         "avoid_water": true
       },
       "minecraft:movement.basic": {
-        
+
       },
       "minecraft:jump.static": {
       },
