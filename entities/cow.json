@@ -109,6 +109,104 @@
         "value": 100,
         "max": 100
       },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "anvil",
+            "deals_damage": false
+          }, {
+            "cause": "block_explosion",
+            "deals_damage": false
+          }, {
+            "cause": "charging",
+            "deals_damage": false
+          }, {
+            "cause": "contact",
+            "deals_damage": false
+          }, {
+            "cause": "drowning",
+            "deals_damage": false
+          }, {
+          //   "cause": "entity_attack",
+          //   "deals_damage": false
+          // }, {
+            "cause": "entity_explosion",
+            "deals_damage": false
+          }, {
+            "cause": "fall",
+            "deals_damage": false
+          }, {
+            "cause": "falling_block",
+            "deals_damage": false
+          }, {
+            "cause": "fire",
+            "deals_damage": false
+          }, {
+            "cause": "fire_tick",
+            "deals_damage": false
+          }, {
+            "cause": "fireworks",
+            "deals_damage": false
+          }, {
+            "cause": "fly_into_wall",
+            "deals_damage": false
+          }, {
+            "cause": "freezing",
+            "deals_damage": false
+          }, {
+            "cause": "lava",
+            "deals_damage": false
+          }, {
+            "cause": "lightning",
+            "deals_damage": false
+          }, {
+            "cause": "magic",
+            "deals_damage": false
+          }, {
+            "cause": "magma",
+            "deals_damage": false
+          }, {
+          //   "cause": "none",
+          //   "deals_damage": false
+          // }, {
+            "cause": "override",
+            "deals_damage": false
+          }, {
+            "cause": "piston",
+            "deals_damage": false
+          }, {
+            "cause": "projectile",
+            "deals_damage": false
+          }, {
+            "cause": "stalactite",
+            "deals_damage": false
+          }, {
+            "cause": "stalagmite",
+            "deals_damage": false
+          }, {
+            "cause": "starve",
+            "deals_damage": false
+          }, {
+            "cause": "suffocation",
+            "deals_damage": false
+          }, {
+            "cause": "suicide",
+            "deals_damage": false
+          }, {
+            "cause": "temperature",
+            "deals_damage": false
+          }, {
+            "cause": "thorns",
+            "deals_damage": false
+          }, {
+            "cause": "void",
+            "deals_damage": false
+          }, {
+            "cause": "wither",
+            "deals_damage": false
+          }
+        ]
+      },
       "minecraft:hurt_on_condition": {
       },
       "minecraft:movement": {
