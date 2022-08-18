@@ -134,13 +134,6 @@
         "value": 300
       },
       "minecraft:hurt_on_condition": {
-        "damage_conditions": [
-          {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
-            "cause": "lava",
-            "damage_per_tick": 4
-          }
-        ]
       },
       "minecraft:collision_box": {
         "width": 1.3,
