@@ -13,8 +13,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "deploy"
+  deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -32,5 +32,5 @@ jobs:
         run: |
           echo "$ORACLE_KEY" > oracle.key
           chmod 400 oracle.key
-          scp -i oracle.key ./install.sh "$ORACLE_SERVER:/home/ubuntu/install.sh"
-          ssh -i oracle.key "$ORACLE_SERVER" /home/ubuntu/install.sh
+          scp -i oracle.key -o StrictHostKeyChecking=No ./install.sh "$ORACLE_SERVER:/home/ubuntu/install.sh"
+          ssh -i oracle.key -o StrictHostKeyChecking=No "$ORACLE_SERVER" /home/ubuntu/install.sh
