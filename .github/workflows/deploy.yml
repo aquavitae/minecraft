@@ -1,13 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
-  pull_request:
     branches: [ "master" ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -25,12 +23,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        with:
+          ORACLE_KEY: ${{ secrets.ORACLE_KEY }}
+          ORACLE_SERVER: ${{ secrets.ORACLE_SERVER }}
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo "$ORACLE_KEY" > oracle.key
+          chmod 400 oracle.key
+          scp -i oracle.key "$ORACLE_SERVER" ./install.sh /home/ubuntu/install.sh
+          ssh -i oracle.key "$ORACLE_SERVER" /home/ubuntu/install.sh
