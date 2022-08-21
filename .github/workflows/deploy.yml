@@ -33,4 +33,4 @@ jobs:
           echo "$ORACLE_KEY" > oracle.key
           chmod 400 oracle.key
           scp -i oracle.key -o StrictHostKeyChecking=No ./install.sh "$ORACLE_SERVER:/home/ubuntu/install.sh"
-          ssh -i oracle.key -o StrictHostKeyChecking=No "$ORACLE_SERVER" /home/ubuntu/install.sh
+          ssh -i oracle.key -o StrictHostKeyChecking=No "$ORACLE_SERVER" bash /home/ubuntu/install.sh
