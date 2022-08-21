@@ -32,5 +32,5 @@ jobs:
         run: |
           echo "$ORACLE_KEY" > oracle.key
           chmod 400 oracle.key
-          scp -i oracle.key "$ORACLE_SERVER" ./install.sh /home/ubuntu/install.sh
+          scp -i oracle.key ./install.sh "$ORACLE_SERVER:/home/ubuntu/install.sh"
           ssh -i oracle.key "$ORACLE_SERVER" /home/ubuntu/install.sh
