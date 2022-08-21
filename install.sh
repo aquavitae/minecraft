@@ -17,3 +17,5 @@ cp -r ./addons/dragons.v14/resource "$target/resource_packs/dragons.v14"
 
 cd ~
 rm -rf my-minecraft
+
+$target/restart.sh
