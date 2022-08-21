@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.dragon_fast": {
+      "arrays": {
+        "textures": {
+          "Array.normal": [ "Texture.normal", "Texture.dragon_fast_can_tame", "Texture.dragon_fast_can_tame2", "Texture.dragon_fast_can_tame3", "Texture.dragon_fast_can_tame4", "Texture.dragon_fast_can_tame5" ],
+          "Array.saddled": [ "Texture.normal", "Texture.dragon_fast_can_tame_saddled", "Texture.dragon_fast_can_tame_saddled2", "Texture.dragon_fast_can_tame_saddled3", "Texture.dragon_fast_can_tame_saddled4", "Texture.dragon_fast_can_tame_saddled5" ],
+          "Array.armored": [ "Texture.normal", "Texture.armored", "Texture.armored2", "Texture.armored3", "Texture.armored4", "Texture.armored5" ],
+          "Array.saddledarmored": [ "Texture.normal", "Texture.armoredsaddled", "Texture.armoredsaddled2", "Texture.armoredsaddled3", "Texture.armoredsaddled4", "Texture.armoredsaddled5" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ 
+        "query.is_sheared && query.is_saddled ? Array.saddledarmored[query.variant] : (query.is_sheared ? Array.armored[query.variant] : (query.is_saddled ? Array.saddled[query.variant] : Array.normal[query.variant]))"
+      ]
+    }
+  }
+}

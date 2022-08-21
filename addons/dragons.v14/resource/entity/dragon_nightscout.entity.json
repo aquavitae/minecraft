@@ -1,0 +1,42 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_nightscout",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "default": "textures/entity/scout/dragon_nightscout1"
+      },
+      "geometry": {
+        "default": "geometry.dragon_nightscout"
+      },
+      "spawn_egg": {
+        "base_color": "#300030",
+        "overlay_color": "#701072"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos_left_side = -variable.tcos_right_side;"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.dragon_nightscout.look_at_target",
+        "move": "animation.dragon_nightscout.move",
+        "arm": "animation.dragon_nightscout.arm",
+        "ride": "animation.dragon_nightscout.ride",
+        "blow_horn": "animation.dragon_nightscout.blow_horn"
+      },
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.dragon_nightscout.look_at_target" },
+        { "move": "controller.animation.dragon_nightscout.move" },
+        { "riding": "controller.animation.dragon_nightscout.riding" },
+        { "blow_horn": "controller.animation.dragon_nightscout.blow_horn" }
+      ],
+      "render_controllers": [ "controller.render.dragon" ],
+      "enable_attachables": true
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_fire_body",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "dragon_fire1": "textures/entity/dragon_fire/dragon_fire1_body1",
+        "dragon_fire1_saddled": "textures/entity/dragon_fire/dragon_fire1_saddle1",
+        "dragon_fire2": "textures/entity/dragon_fire/dragon_fire1_body2",
+        "dragon_fire2_saddled": "textures/entity/dragon_fire/dragon_fire1_saddle2",
+        "dragon_fire3": "textures/entity/dragon_fire/dragon_fire1_body3",
+        "dragon_fire3_saddled": "textures/entity/dragon_fire/dragon_fire1_saddle3"
+      },
+      "geometry": {
+        "default": "geometry.dragon_fire_body"
+      },
+      "scripts": {
+        "pre_animation": [
+           "variable.dragon_fire.attack = query.has_target && !query.is_sitting && !query.has_rider;",
+           "variable.dragon_fire.sitting = query.is_sitting;"
+        ]
+      },
+      "animations": {
+        "walk": "animation.dragon_fire.walk",
+        "sit": "animation.dragon_fire.sit",
+        "fly": "animation.dragon_fire.fly",
+        "swim": "animation.dragon_fire.swim",
+        "attack": "animation.dragon_fire.attack",
+        "look_at_target": "animation.dragon_fire.look_at_target",
+        "breathe": "animation.dragon_fire.breathe",
+        "baby_transform": "animation.dragon_fire.baby_transform"
+      },
+      "animation_controllers": [
+        { "breathe": "controller.animation.dragon_fire.breathe" },
+        { "move": "controller.animation.dragon_fire.move" },
+        { "look_at_target": "controller.animation.dragon_fire.look_at_target" },
+        { "baby": "controller.animation.dragon_fire.baby" }
+      ],
+      "render_controllers": [
+        "controller.render.dragon_fire_body"
+      ],
+      "spawn_egg": {
+        "base_color": "#FF7F00",
+        "overlay_color": "#d30b3b"
+      }
+    }
+  }
+}

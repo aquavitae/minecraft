@@ -1,0 +1,1 @@
+playsound goodlord.dragon_wind @a[r=7]

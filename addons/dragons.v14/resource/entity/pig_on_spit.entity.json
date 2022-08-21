@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:pig_on_spit",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "default": "textures/entity/pig_on_spit"
+      },
+      "geometry": {
+        "default": "geometry.pig_on_spit"
+      },
+      
+      "render_controllers": [
+        "controller.render.pig_on_spit"
+      ],
+	  "spawn_egg": {
+        "base_color": "#4a5c24",
+        "overlay_color": "#17171b"
+      }
+    }
+  }
+}

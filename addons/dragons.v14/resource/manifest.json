@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "Dragons (resource)",
+    "description": "Can't stand the heat?!??",
+    "uuid": "6181ad98-68b8-41ca-abf2-d50a560e5b26",
+    "version": [6, 7, 47]    
+  },
+  "modules": [
+    {
+      "description": "Dragons",
+      "type": "resources",
+      "uuid": "d5a03791-11a2-4cf7-ad40-c52d690f7196",
+      "version": [6, 7, 47]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "ad55d20a-2211-479e-aa54-8a26ba224455",
+      "version": [6, 7, 47]
+    }
+  ]
+}

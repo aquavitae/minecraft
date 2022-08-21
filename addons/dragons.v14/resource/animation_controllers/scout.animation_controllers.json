@@ -1,0 +1,61 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.scout.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "move" ]
+				}
+			}
+		},
+		"controller.animation.scout.look_at_target" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "look_at_target" ]
+				}
+			}
+		},
+		"controller.animation.scout.blow_horn" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"blow_horn" : "query.has_target"
+						}
+					]
+				},
+				"blow_horn" : {
+					"animations" : [ "blow_horn" ],
+					"transitions" : [
+						{
+							"default" : "!query.has_target"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.scout.riding" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"riding" : "query.is_riding"
+						}
+					]
+				},
+				"riding" : {
+					"animations" : [ "ride" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_riding"
+						}
+					]
+				}
+			}
+		}
+	}
+}

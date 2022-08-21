@@ -1,0 +1,94 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+    "controller.animation.dragon_lord.attack" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"attack" : "variable.is_holding_left != 1.0"
+						}
+					]
+				},
+				"attack" : {
+					"animations" : [ "attack" ],
+					"transitions" : [
+						{
+							"default" : "variable.is_holding_left == 1.0"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_lord.riding" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"riding" : "query.is_riding"
+						}
+					]
+				},
+				"riding" : {
+					"animations" : [ "ride" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_riding"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_lord.baby" : {
+			"initial_state" : "baby",
+			"states" : {
+				"baby" : {
+					"animations" : [
+						{
+							"baby_transform" : "query.is_baby"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_lord.look_at_target" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [
+						{
+							"look_at_target" : "!query.is_sleeping"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_lord.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [
+						{
+							"move" : "query.modified_move_speed"
+						}
+					],
+					"transitions" : [
+						{
+							"get_in_bed" : "query.is_sleeping"
+						}
+					]
+				},
+				"get_in_bed" : {
+					"animations" : [ "get_in_bed" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_sleeping"
+						}
+					]
+				}
+			}
+		}
+	}
+}

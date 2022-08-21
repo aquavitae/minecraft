@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+
+    "controller.animation.dfireball.move": {
+      "states": {
+        "move": {
+          "parameters": [ "query.modified_move_speed" ],
+          "particle_effects": [
+            {
+              "effect": "smoke_puff",
+              "locator": "bone"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

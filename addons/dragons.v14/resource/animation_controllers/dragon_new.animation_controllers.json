@@ -1,0 +1,159 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.dragon_new.baby" : {
+			"initial_state" : "baby",
+			"states" : {
+				"baby" : {
+					"animations" : [
+						{
+							"baby_transform" : "query.is_baby"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_new.look_at_target" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "look_at_target" ]
+				}
+			}
+		},
+    "controller.animation.dragon_new.breathe" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"blend_transition" : 0.4,
+          "blend_via_shortest_path" : true,
+          "transitions" : [
+						{
+							"breathe" : "!query.has_rider && query.is_on_ground && !query.is_in_water"
+						}
+					]
+				},
+				"breathe" : {
+					"animations" : [ "breathe" ],
+					"transitions" : [
+						{
+							"default" : "query.has_rider || !query.is_on_ground"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_new.blink" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "blink" ]
+				}
+			}
+		},
+		"controller.animation.dragon_new.move" : {
+			"initial_state" : "walking",
+			"states" : {
+				"walking" : {
+					"animations" : [
+            {
+							"walk" : "query.is_on_ground && query.modified_move_speed"
+						} 
+            ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_new.attack && !variable.dragon_new.sitting"
+						},
+            {
+							"flying" : "!query.is_on_ground && !query.is_in_water"
+						},
+						{
+							"sitting" : "variable.dragon_new.sitting"
+						},
+						{
+							"attack" : "variable.dragon_new.attack"
+						}
+					]
+				},
+				"attack" : {
+					"animations" : [ "attack" , "legs" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_new.attack && !variable.dragon_new.sitting"
+						},
+            {
+							"walking" : "!variable.dragon_new.attack"
+						},
+						{
+							"flying" : "!query.is_on_ground && !variable.dragon_new.attack && !query.is_in_water"
+						},
+						{
+							"sitting" : "variable.dragon_new.sitting"
+						}
+					]
+				},
+        "swimming" : {
+					"animations" : [ "swim" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"walking" : "!query.is_in_water"
+						},
+						{
+							"flying" : "!query.is_on_ground && !variable.dragon_new.attack && !query.is_in_water"
+						},
+						{
+							"sitting" : "variable.dragon_new.sitting"
+						},
+						{
+							"attack" : "variable.dragon_new.attack"
+						}
+					]
+				},
+				"flying" : {
+					"animations" : [ "fly" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_new.attack && !variable.dragon_new.sitting"
+						},
+            {
+							"walking" : "query.is_on_ground && query.modified_move_speed"
+						},
+						{
+							"sitting" : "variable.dragon_new.sitting"
+						},
+						{
+							"attack" : "variable.dragon_new.attack"
+						}
+					]
+				},
+				"sitting" : {
+					"animations" : [ "sit" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_new.attack && !variable.dragon_new.sitting"
+						},
+            {
+							"walking" : "!variable.dragon_new.sitting"
+						},
+						{
+							"flying" : "!query.is_on_ground && !query.is_in_water && !query.is_sitting"
+						},
+						{
+							"attack" : "variable.dragon_new.attack"
+						}
+					]
+				}
+			}
+		}
+	}
+}

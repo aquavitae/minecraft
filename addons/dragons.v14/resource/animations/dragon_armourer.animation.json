@@ -1,0 +1,133 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.dragon_armourer.crossbow.charge" : {
+			"bones" : {
+				"leftArm" : {
+					"rotation" : [ "math.lerp(-90.0 + 34.38, -90.0, variable.crossbow_charge)  -this", "math.lerp(22.92, 48.70, variable.crossbow_charge) -this", 0.0 ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-90.0 + 34.38 -this", "-45.84 -this", 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.dragon_armourer.crossbow.hold" : {
+			"bones" : {
+				"leftArm" : {
+					"rotation" : [ "-85.94 + query.target_x_rotation -this", "34.38 + math.clamp(query.target_y_rotation, -45, 25) -this", 0.0 ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-90.0 + 5.73 + query.target_x_rotation -this", "-17.19 + math.clamp(query.target_y_rotation, -25, 45) -this", 0.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.dragon_armourer.sword.attack" : {
+			"bones" : {
+				"leftArm" : {
+					"rotation" : [ "-90 + (variable.attack2 * 1.2 - variable.attack * 0.4) - variable.x_bob - this", "5.73 - (variable.attack2 * 0.6) - this", "-variable.z_bob - this" ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-90 + (variable.attack2 * 1.2 - variable.attack * 0.4) + variable.x_bob - this", "variable.attack2 * 0.6 - 5.73 - this", "variable.z_bob - this" ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.dragon_armourer.move" : {
+			"loop" : true,
+			"bones": {
+				"leftArm" : {
+					"rotation" : [ "-variable.tcos_left_side", 0.0, 0.0 ]
+				},
+				"leftLeg" : {
+					"rotation" : [ "variable.tcos_left_side * 1.4", 0.0, 0.0 ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-variable.tcos_right_side", 0.0, 0.0 ]
+				},
+				"rightLeg" : {
+					"rotation" : [ "variable.tcos_right_side * 1.4", 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.dragon_armourer.admire" : {
+			"loop" : true,
+			"bones": {
+				"leftArm" : {
+					"rotation" : [ 320.0, 25.0, 0.0 ]
+				},
+				"head" : {
+					"rotation" : [ 30.0, 0.0, 0.0 ]
+				},
+        "hat" : {
+					"rotation" : [ 30.0, 0.0, 0.0 ]
+				}
+			}
+		},
+    "animation.dragon_armourer.look_at_target" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				},
+        "hat" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				}
+			}
+		},
+    "animation.dragon_armourer.ride" : {
+			"bones" : {
+        "head" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "hat" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "body" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+				"leftArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+				"rightArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+        "leftLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, -18.0 , 0 ]
+				},
+				"rightLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, 18.0 , 0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.dragon_armourer.celebrate_hunt_special": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"position": [ "Math.sin(query.time_stamp * 10)", "Math.sin(query.time_stamp * 40)", 0.0 ]
+				},
+				"rightArm": {
+					"rotation": [ 0.0, 0.0, "70 + Math.cos(query.time_stamp * 40) * 10"]
+				},
+				"leftArm": {
+					"rotation": [ 0.0, 0.0, "-70 - Math.cos(query.time_stamp * 40) * 10"]
+				},
+				"body": {
+					"position": [ 0.0, "Math.sin(query.time_stamp * 40) * 0.35", 0.0 ]
+				}
+			}
+		}
+	}
+}

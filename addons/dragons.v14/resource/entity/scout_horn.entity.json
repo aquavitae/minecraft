@@ -1,0 +1,38 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:scout_horn",
+      "materials": {
+        "default": "piglin"
+      },
+      "textures": {
+        "default": "textures/entity/scout/scout1"
+      },
+      "geometry": {
+        "default": "geometry.scout"
+      },
+      "spawn_egg": {
+        "base_color": "#7a4e28",
+        "overlay_color": "#f9f3a4"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos_left_side = -variable.tcos_right_side;"
+          ]
+      },
+      "animations": {
+        "look_at_target": "animation.scout.look_at_target",
+        "move": "animation.scout.blow_horn",
+        "ride": "animation.scout.ride",
+        "blow_horn": "animation.scout.blow_horn"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.scout_horn.move" }
+      ],
+      "render_controllers": [ "controller.render.dragon" ],
+      "enable_attachables": true
+    }
+  }
+}

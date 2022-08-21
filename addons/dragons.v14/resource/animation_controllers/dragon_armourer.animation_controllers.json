@@ -1,0 +1,128 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.dragon_armourer.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "move" ]
+				}
+			}
+		},
+		"controller.animation.dragon_armourer.celebrate": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"celebrating" : "query.is_celebrating == 1"
+						},
+						{
+							"celebrating_special": "query.is_celebrating_special == 1"
+						}
+					]
+				},
+				"celebrating": {
+					"animations": [ "celebrate_hunt" ],
+					"transitions": [
+						{
+							"default": "query.is_celebrating == 0"
+						}
+					]
+				},
+				"celebrating_special": {
+					"animations": [ "celebrate_hunt_special" ],
+					"transitions": [
+						{
+							"default": "query.is_celebrating_special == 0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_armourer.attack" : {
+			"initial_state" : "default",
+			"states" : {
+				"ranged_charge" : {
+					"animations" : [ "crossbow_charge" ],
+					"transitions" : [
+						{
+							"default" : "!query.has_target  ||  query.is_admiring"
+						},
+						{
+							"ranged_hold" : "query.has_target"
+						}
+					]
+				},
+				"default" : {
+					"transitions" : [
+						{
+							"ranged_hold" : "query.variant == 0 && query.has_target && !query.is_admiring"
+						},
+						{
+							"ranged_charge" : "query.variant == 0 && query.is_charging && !query.is_admiring"
+						},
+						{
+							"melee_attack": "query.has_target && query.variant == 1 && !query.is_admiring"
+						}
+					]
+				},
+				"ranged_hold" : {
+					"animations" : [ "crossbow_hold" ],
+					"transitions" : [
+						{
+							"default" : "!query.has_target  ||  query.is_admiring"
+						},
+						{
+							"ranged_charge" : "query.is_charging"
+						}
+					]
+				},
+				"melee_attack" : {
+					"animations": ["melee_attack"],
+					"transitions" : [
+						{
+							"default" : "!query.has_target ||  query.is_admiring"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_armourer.riding" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"riding" : "query.is_riding"
+						}
+					]
+				},
+				"riding" : {
+					"animations" : [ "ride" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_riding"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_armourer.admire" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions": [{
+						"admiring": "query.is_admiring"
+					}]
+				},
+				"admiring": {
+					"animations": ["admire"],
+					"transitions": [{
+						"default": "!query.is_admiring"
+					}]
+				}
+			}
+		}
+	}
+}

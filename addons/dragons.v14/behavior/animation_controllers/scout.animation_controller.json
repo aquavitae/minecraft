@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scout": {
+      "states": {
+        "walking": {
+          "on_entry": [
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_cart ~1 ~ ~1",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_soldier ~1 ~ ~1",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_armourer ~1 ~ ~5",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_lord ~1 ~ ~2",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_soldier ~ ~ ~-5",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_soldier ~-5 ~1 ~5",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_soldier ~-5 ~1 ~-5",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_brute ~-5 ~1 ~9",
+            "/execute @e[type=goodlord:scout] ~ ~ ~ summon goodlord:dragon_wizard ~5 ~1 ~7",
+            "/kill @e[type=goodlord:scout,r=10]"
+          ]
+        }
+      }
+    }
+  }
+}

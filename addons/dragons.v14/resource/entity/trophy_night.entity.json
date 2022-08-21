@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:trophy_night",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "default": "textures/entity/trophy_night"
+      },
+      "geometry": {
+        "default": "geometry.trophy"
+      },
+      "render_controllers": [
+        "controller.render.trophy"
+      ],
+	  "spawn_egg": {
+        "texture": "trophy_night",
+        "texture_index": 0
+      }
+    }
+  }
+}

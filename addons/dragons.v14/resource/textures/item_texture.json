@@ -1,0 +1,18 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "camp": {
+      "textures": "textures/items/camp"
+    },
+    "netherite_dragon_armor": {
+      "textures": "textures/items/netherite_dragon_armor"
+    },
+    "trophy_night": {
+      "textures": "textures/items/trophy_night"
+    },
+    "trophy_day": {
+      "textures": "textures/items/trophy_day"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dtent",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "default": "textures/entity/tent"
+      },
+      "geometry": {
+        "default": "geometry.tent"
+      },
+      
+      "render_controllers": [
+        "controller.render.tent"
+      ],
+	  "spawn_egg": {
+        "base_color": "#4a5c24",
+        "overlay_color": "#17171b"
+      }
+    }
+  }
+}

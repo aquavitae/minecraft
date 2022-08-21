@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.dragon_fire_body": {
+      "arrays": {
+        "textures": {
+          "Array.normal": [ "Texture.dragon_fire1", "Texture.dragon_fire2", "Texture.dragon_fire3" ],
+          "Array.saddled": [ "Texture.dragon_fire1_saddled", "Texture.dragon_fire2_saddled", "Texture.dragon_fire3_saddled" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ 
+        "query.is_saddled ? Array.saddled[query.variant] : Array.normal[query.variant]"
+      ]
+    }
+  }
+}

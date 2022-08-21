@@ -1,0 +1,86 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "goodlord:pig_on_spit",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "goodlord:convert_to_pig": {
+        "minecraft:transformation": {
+          "into": "minecraft:pig",
+          "transformation_sound": "tone",
+          "drop_equipment": false,
+          "delay": {
+            "value": 0
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "armor_stand", "inanimate", "mob" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 1.3
+      },
+      "minecraft:health": {
+        "value": 22,
+        "max": 22
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/pig_on_spit.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:knockback_resistance": {
+        "value": 2.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+
+                "all_of": [
+                  {"test": "has_damage", "value": "fatal"}
+                ]
+              },
+              "event": "become_pig"
+            }
+          }
+        ]
+      }
+    },
+
+    "events": {
+      "become_pig": {
+        "add": {
+          "component_groups": [
+            "goodlord:convert_to_pig"
+          ]
+        }
+      }
+    }
+  }
+}

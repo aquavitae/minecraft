@@ -1,0 +1,41 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:scout",
+      "materials": {
+        "default": "piglin"
+      },
+      "textures": {
+        "default": "textures/entity/scout/scout1"
+      },
+      "geometry": {
+        "default": "geometry.scout"
+      },
+      "spawn_egg": {
+        "base_color": "#aa6f48",
+        "overlay_color": "#f9f3a4"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos_right_side = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos_left_side = -variable.tcos_right_side;"
+          ]
+      },
+      "animations": {
+        "look_at_target": "animation.scout.look_at_target",
+        "move": "animation.scout.move",
+        "ride": "animation.scout.ride",
+        "blow_horn": "animation.scout.blow_horn"
+      },
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.scout.look_at_target" },
+        { "move": "controller.animation.scout.move" },
+        { "riding": "controller.animation.scout.riding" },
+        { "blow_horn": "controller.animation.scout.blow_horn" }
+      ],
+      "render_controllers": [ "controller.render.dragon" ],
+      "enable_attachables": true
+    }
+  }
+}

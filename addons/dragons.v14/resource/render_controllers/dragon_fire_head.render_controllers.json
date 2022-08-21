@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.dragon_fire_head": {
+      "arrays": {
+        "textures": {
+          "Array.normal": [ "Texture.dragon_fire1", "Texture.dragon_fire2", "Texture.dragon_fire3", "Texture.dragon_fire4", "Texture.dragon_fire5", "Texture.dragon_fire6" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ 
+        "Array.normal[query.variant]"
+      ]
+    }
+  }
+}

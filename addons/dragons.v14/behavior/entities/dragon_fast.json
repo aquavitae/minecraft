@@ -1,0 +1,594 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "goodlord:dragon_fast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "dragon_fast" ]
+      },
+      "animations": {
+        "dragon_fast": "controller.animation.dragon_fast"
+      }
+    },
+
+    "component_groups": {
+      "goodlord:dragon_fast_wild": {
+        "minecraft:behavior.mount_pathing": {
+          "priority": 2,
+          "speed_multiplier": 1.5,
+          "target_dist": 0.0,
+          "track_target": true
+        },
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        }
+      },
+      "goodlord:dragon_fast_add_ride": {
+        "minecraft:rideable": {
+          "priority": 0,
+          "seat_count": 1,
+          "crouching_skip_interact": true,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [ 0.0, 1.2, 0.5 ]
+          }
+        }
+      },
+      "goodlord:likes_clowns": {
+        "minecraft:behavior.tempt": {
+          "priority": 4,
+          "can_get_scared": true,
+          "speed_multiplier": 0.5,
+          "items": [
+            "clownfish"
+          ]
+        },
+        "minecraft:tameable": {
+          "probability": 0.12,
+          "tameItems": [ "clownfish" ],
+          "tame_event": {
+            "event": "minecraft:on_tame",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.avoid_mob_type": {
+          "priority": 5,
+          "entity_types": [
+            {
+              "filters": { "test": "is_family", "subject": "other", "value": "player" },
+              "max_dist": 16,
+              "walk_speed_multiplier": 1.8,
+              "sprint_speed_multiplier": 2.2
+            }
+          ]
+        }
+      },
+
+      "goodlord:dragon_fast_tamed": {
+        "minecraft:is_tamed": {
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "goodlord:dragon_armor"},
+                    { "test" :  "has_component", "operator": "!=", "value" :  "minecraft:is_sheared"},
+                    { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                  ]
+                },
+                "play_sounds": "armor.equip_generic",
+                "event": "goodlord:dragon_fast_armored"
+              },
+              "swing": true,
+              "use_item": true
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "saddle"},
+                    { "test" :  "has_component", "operator": "!=", "value" : "minecraft:is_saddled"},
+                    { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                  ]
+                },
+                "event": "goodlord:dragon_fast_saddled"
+              },
+              "swing": true,
+              "use_item": true,
+              "play_sounds": "saddle"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blaze_rod"},
+                    { "test" :  "has_component", "value" :  "minecraft:is_sheared"},
+                    { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                  ]
+                },
+                "event": "goodlord:dragon_fast_unarmored"
+              },
+              "swing": true,
+              "transform_to_item": "goodlord:dragon_armor",
+              "play_sounds": "armor.equip_generic",
+              "use_item": false
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "blaze_rod"},
+                    { "test" :  "has_component", "value" :  "minecraft:is_saddled"},
+                    { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                  ]
+                },
+                "event": "goodlord:dragon_fast_unsaddled"
+              },
+              "swing": true,
+              "transform_to_item": "minecraft:saddle",
+              "use_item": false,
+              "play_sounds": "saddle"
+            }
+          ]
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "dragon"}
+                ] 
+              }
+            }
+          ]
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "dragon"}
+                ] 
+              }
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 18,
+          "effect_name": "poison",
+          "effect_duration": 4
+        },
+            
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1.1,
+          "start_distance": 10,
+          "stop_distance": 3
+        },
+        "minecraft:behavior.stay_while_sitting": {
+          "priority": 3
+        },
+        "minecraft:sittable": {
+          "sit_event": {
+            "event": "minecraft:on_sit",
+            "target": "self"
+          },
+          "stand_event": {
+            "event": "minecraft:on_stand",
+            "target": "self"
+          }
+        }
+      },
+
+      "goodlord:dragon_fast_leashed": {
+        "minecraft:behavior.move_towards_restriction": {
+          "priority": 5,
+          "speed_multiplier": 1.0
+        }
+      },
+
+      "goodlord:dragon_fast_has_saddle": {
+        "minecraft:is_saddled": {
+        },
+        "minecraft:input_ground_controlled": {
+        },
+        "minecraft:can_power_jump": {
+        },
+        "minecraft:behavior.player_ride_tamed": {
+        }
+      },
+      "goodlord:dragon_fast_armored": {
+        "minecraft:is_sheared": {
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            { "cause": "entity_attack", "deals_damage": false },
+            { "cause": "wither", "deals_damage": false },
+            { "cause": "magic", "deals_damage": false },
+            { "cause": "fire", "deals_damage": false },
+            { "cause": "magma", "deals_damage": false },
+            { "cause": "fall", "deals_damage": false },
+            { "cause": "lava", "deals_damage": false },
+            { "cause": "contact", "deals_damage": false },
+            { "cause": "entity_explosion", "deals_damage": false }
+          ]
+        }
+      },
+      "goodlord:dragon_fast_normal": {
+        "minecraft:variant": { "value": 0 }
+      },
+      "goodlord:dragon_fast_can_tame": {
+        "minecraft:variant": { "value": 1 }
+
+      },
+      "goodlord:dragon_fast_can_tame2": {
+        "minecraft:variant": { "value": 2 }
+      },
+      "goodlord:dragon_fast_can_tame3": {
+        "minecraft:variant": { "value": 3 }
+      },
+      "goodlord:dragon_fast_can_tame4": {
+        "minecraft:variant": { "value": 4 }
+      },
+      "goodlord:dragon_fast_can_tame5": {
+        "minecraft:variant": { "value": 5 },
+        "minecraft:mark_variant": { "value": 5 },
+        "minecraft:healable": {
+          "items": [
+            {
+              "item": "clownfish",
+              "heal_amount": 25
+            },
+            {
+              "item": "fish",
+              "heal_amount": 3
+            },
+            {
+              "item": "salmon",
+              "heal_amount": 4
+            },
+            {
+              "item": "snowball",
+              "heal_amount": 4
+            }
+          ]
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.18
+        },
+        "minecraft:movement": {
+          "value": {
+            "range_min": 0.90, 
+            "range_max": 0.95
+          }
+        }
+      },
+      "goodlord:normal_attack": {
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 12,
+            "range_max": 25
+          }
+        }
+      },
+      "goodlord:poison_attack": {
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 10,
+            "range_max": 22
+          },
+          "effect_name": "poison",
+          "effect_duration": 4
+        }
+      },
+      "goodlord:wither_attack": {
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 10,
+            "range_max": 22
+          },
+          "effect_name": "wither",
+          "effect_duration": 3
+        }
+      },
+      "goodlord:slowness_attack": {
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 11,
+            "range_max": 23
+          },
+          "effect_name": "slowness",
+          "effect_duration": 5
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "track_target": true,
+        "reach_multiplier": 1.0
+      },      
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 5,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test" :  "is_family", "subject" : "other", "value" :  "wasp" },
+                { "test" :  "is_family", "subject" : "other", "value" :  "dragon_hunter" }
+              ]
+            },
+            "max_dist": 12
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          { "cause": "magic", "deals_damage": false },
+          { "cause": "fire", "deals_damage": false },
+          { "cause": "magma", "deals_damage": false },
+          { "cause": "fall", "deals_damage": false },
+          { "cause": "lava", "deals_damage": false }
+        ]
+      },
+      "minecraft:scale": {
+        "value": 0.8
+      },
+      "minecraft:type_family": {
+        "family": [ "animal", "dragon", "dragon_fast" ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/dragon_fast.json"
+      },
+      "minecraft:breathable": {
+        "totalSupply": 300,
+        "suffocateTime": 0,
+        "breathesWater": true
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.15
+      },
+      "minecraft:movement": {
+        "value": {
+          "range_min": 0.95, 
+          "range_max": 1.05
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 1.8,
+        "height": 0.8
+      },
+      "minecraft:health": {
+        "value": {
+          "range_min": 80,
+          "range_max": 140
+        }
+      },
+      "minecraft:navigation.generic": {
+        "is_amphibious": true,
+        "can_path_over_water": true,
+        "can_swim": true,
+        "can_walk": true,
+        "can_sink": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+        
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:horse.jump_strength": {
+        "value": {
+          "range_min": 1.2, 
+          "range_max": 1.6
+        }
+      },
+      "minecraft:leashable": {
+        "soft_distance": 4.0,
+        "hard_distance": 6.0,
+        "max_distance": 10.0,
+        "on_leash": {
+          "event": "minecraft:on_leash",
+          "target": "self"
+        },
+        "on_unleash": {
+          "event": "minecraft:on_unleash",
+          "target": "self"
+        }
+      },
+      "minecraft:balloonable": {
+      },
+      "minecraft:healable": {
+        "items": [
+          {
+            "item": "clownfish",
+            "heal_amount": 25
+          },
+          {
+            "item": "fish",
+            "heal_amount": 3
+          },
+          {
+            "item": "salmon",
+            "heal_amount": 4
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 4
+      },
+	    "minecraft:physics": {
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 36,
+                "add": { "component_groups": [ "goodlord:dragon_fast_wild" ]
+                }
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 15,
+                "add": { "component_groups": [ "goodlord:dragon_fast_normal" ] }
+              },
+              {
+                "weight": 10,
+                "add": { "component_groups": [ "goodlord:dragon_fast_can_tame", "goodlord:likes_clowns" ] }
+              },
+               {
+                "weight": 10,
+                "add": { "component_groups": [ "goodlord:dragon_fast_can_tame2", "goodlord:likes_clowns" ] }
+              },
+              {
+                "weight": 10,
+                "add": { "component_groups": [ "goodlord:dragon_fast_can_tame3", "goodlord:likes_clowns" ] }
+              },
+              {
+                "weight": 10,
+                "add": { "component_groups": [ "goodlord:dragon_fast_can_tame4", "goodlord:likes_clowns" ] }
+              },
+              {
+                "weight": 22,
+                "add": { "component_groups": [ "goodlord:dragon_fast_can_tame5", "goodlord:likes_clowns" ] }
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 10,
+                "add": { "component_groups": [ "goodlord:normal_attack" ] }
+              },
+              {
+                "weight": 3,
+                "add": { "component_groups": [ "goodlord:poison_attack" ] }
+              },
+              {
+                "weight": 1,
+                "add": { "component_groups": [ "goodlord:wither_attack" ] }
+              },
+              {
+                "weight": 4,
+                "add": { "component_groups": [ "goodlord:slowness_attack" ] }
+              }
+            ]
+          }
+        ]
+      },
+
+      "minecraft:on_tame": {
+        "remove": {
+          "component_groups": [ "goodlord:dragon_fast_wild", "goodlord:likes_clowns" ]
+        },
+        "add": {
+          "component_groups": [
+            "goodlord:dragon_fast_tamed",
+            "goodlord:dragon_fast_add_ride"
+          ]
+        }
+      },
+
+      "minecraft:on_leash": {
+        "add": {
+          "component_groups": [
+            "goodlord:dragon_fast_leashed"
+          ]
+        }
+      },
+      "minecraft:on_unleash": {
+        "remove": {
+          "component_groups": [
+            "goodlord:dragon_fast_leashed"
+          ]
+        }
+      },
+      "minecraft:on_sit": {
+        "add":{
+          "component_groups": [
+            "sit"
+          ]
+        },
+        "remove":{
+          "component_groups": [
+            "goodlord:dragon_fast_add_ride"
+          ]                   
+        }
+      },
+      "minecraft:on_stand": {
+        "remove":{
+          "component_groups": [
+            "sit"
+          ]
+        },
+        "add":{
+          "component_groups": [
+            "goodlord:dragon_fast_add_ride"
+          ]                   
+        }
+      },
+      "goodlord:dragon_fast_saddled": {
+        "add": {
+          "component_groups": [
+            "goodlord:dragon_fast_has_saddle"
+          ]
+        }
+      },
+      "goodlord:dragon_fast_unsaddled": {
+        "remove": {
+          "component_groups": [
+            "goodlord:dragon_fast_has_saddle"
+          ]
+        }
+      },
+      "goodlord:dragon_fast_armored": {
+        "add": {
+          "component_groups": [
+            "goodlord:dragon_fast_armored"
+          ]
+        }
+      },
+      "goodlord:dragon_fast_unarmored": {
+        "remove": {
+          "component_groups": [
+            "goodlord:dragon_fast_armored"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+execute @e[r=2,type=goodlord:dragon_fast] ~ ~ ~ effect @s slowness 2 3 true

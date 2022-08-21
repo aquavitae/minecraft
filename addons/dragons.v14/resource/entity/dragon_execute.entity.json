@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_execute",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "dragon_execute1": "textures/entity/dragon_execute/dragon_execute1",
+        "dragon_execute2": "textures/entity/dragon_execute/dragon_execute2"
+      },
+      "geometry": {
+        "default": "geometry.dragon_execute"
+      },
+      "scripts": {
+        "pre_animation": [
+           "variable.dragon_execute.attack = query.is_delayed_attacking;"
+        ]
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * math.max(0.5,query.modified_move_speed) / variable.gliding_speed_value) * 57.3;"
+        ]
+      },
+      "animations": {
+        "move": "animation.dragon_execute.move",
+        "attack": "animation.dragon_execute.attack",
+        "look_at_target": "animation.dragon_execute.look_at_target"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.dragon_execute.move" },
+        { "look_at_target": "controller.animation.dragon_execute.look_at_target" }
+      ],
+      "render_controllers": [
+        "controller.render.dragon_execute"
+      ],
+      "spawn_egg": {
+        "overlay_color": "#ac1c1d",
+        "base_color": "#620911"
+      }
+    }
+  }
+}

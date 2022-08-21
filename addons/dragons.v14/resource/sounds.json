@@ -1,0 +1,200 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "goodlord:dragon_armourer": {
+        "events" : {
+           "ambient" : "mob.pillager.idle",
+           "celebrate" : "mob.pillager.celebrate",
+           "death" : "mob.pillager.death",
+           "hurt" : "mob.pillager.hurt"
+        },
+        "pitch" : [ 0.60, 0.75 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_wizard": {
+        "events" : {
+           "ambient" : "mob.evocation_illager.ambient",
+           "cast.spell" : "mob.evocation_illager.cast_spell",
+           "celebrate" : "mob.evocation_illager.celebrate",
+           "death" : "mob.evocation_illager.death",
+           "hurt" : "mob.evocation_illager.hurt",
+           "prepare.attack" : "mob.evocation_illager.prepare_attack",
+           "prepare.summon" : "mob.evocation_illager.prepare_summon",
+           "prepare.wololo" : "mob.evocation_illager.prepare_wololo"
+        },
+        "pitch" : [ 0.60, 0.75 ],
+        "volume" : 1.0
+      },
+      "goodlord:scout": {
+        "events" : {
+           "ambient" : "mob.pillager.idle",
+           "death" : "mob.scout.death",
+           "hurt" : "mob.evocation_illager.hurt"
+        },
+        "pitch" : [ 1.40, 1.5 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_nightscout": {
+        "events" : {
+           "ambient" : "mob.pillager.idle",
+           "death" : "mob.scout.death",
+           "hurt" : "mob.evocation_illager.hurt"
+        },
+        "pitch" : [ 1.25, 1.4 ],
+        "volume" : 1.0
+      },
+      "goodlord:scout_horn": {
+        "events" : {
+           "celebrate" : "mob.pillager.celebrate",
+           "death" : "mob.scout_horn.death",
+           "hurt" : "mob.pillager.hurt"
+        },
+        "pitch" : [ 0.60, 0.75 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_new": {
+        "events" : {
+          "ambient" : {
+            "sound": "mob.dragon_new.idle",
+            "volume": 0.8
+          },
+          "step" : {
+            "sound": "mob.ravager.step",
+            "pitch" : [ 1.40, 1.60 ],
+            "volume": 1.0
+          },
+          "attack": "mob.dragon_new.attack",
+          "death": "mob.dragon_new.death",
+          "hurt": "mob.dragon_new.hurt"
+        },
+        "pitch" : [ 0.90, 1.15 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_horn": {
+        "events" : {
+          "ambient" : {
+            "sound": "mob.dragon_new.idle",
+            "volume": 0.8
+          },
+          "step" : {
+            "sound": "mob.ravager.step",
+            "pitch" : [ 1.30, 1.40 ],
+            "volume": 1.0
+          },
+          "attack": "mob.dragon_new.attack",
+          "death": "mob.dragon_new.death",
+          "hurt": "mob.dragon_new.hurt"
+        },
+        "pitch" : [ 0.70, 0.9 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_lord": {
+        "events" : {
+           "ambient" : "mob.dragon_lord.idle",
+           "death" : "mob.dragon_lord.death",
+           "hurt" : "mob.dragon_lord.hurt",
+            "attack": {
+              "sound": "mob.dragon_lord.attack",
+              "pitch": [ 0.8, 1.0 ]
+            }
+        },
+        "pitch" : [ 0.70, 0.90 ],
+        "volume" : 0.7
+      },
+      "goodlord:dragon_fast": {
+        "events" : {
+          "ambient" : {
+            "sound": "mob.dragon_fast.idle",
+            "volume": 0.7
+          },
+          "attack": "mob.dragon_fast.attack",
+          "hurt": "mob.dragon_fast.hurt",
+          "step" : {
+            "sound": "mob.ravager.step",
+            "pitch" : [ 1.90, 2.15 ],
+            "volume": 0.7
+          },
+          "death": "mob.dragon_fast.death"
+        },
+        "pitch" : [ 0.90, 1.15 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_fire_body": {
+        "events" : {
+          "ambient" : {
+            "sound": "mob.dragon_fire.idle",
+            "volume": 0.8
+          },
+          "attack": "mob.dragon_new.attack",
+          "death": "mob.dragon_new.death",
+          "step" : {
+            "sound": "mob.ravager.step",
+            "pitch" : [ 1.90, 2.15 ],
+            "volume": 0.9
+          },
+          "hurt": "mob.dragon_new.hurt"
+        },
+        "pitch" : [ 0.90, 1.15 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_fire_head": {
+        "events" : {
+          "attack": "mob.dragon_fire.attack",
+          "shoot": "mob.dragon_fire.shoot",
+          "death": "mob.dragon_new.death"
+        },
+        "pitch" : [ 0.90, 1.15 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_execute": {
+        "events" : {
+          "ambient" : {
+            "sound": "mob.dragon_execute.idle",
+            "volume": 0.8
+          },
+          "attack": "mob.dragon_execute.attack",
+          "death": "mob.dragon_execute.death",
+          "step" : {
+            "sound": "mob.ravager.step",
+            "pitch" : [ 0.7, 0.8 ],
+            "volume": 0.7
+          },
+          "hurt": "mob.dragon_execute.hurt"
+        },
+        "pitch" : [ 0.90, 1.15 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_nightsoldier" : {
+        "events" : {
+           "ambient" : "mob.pillager.idle",
+           "ambient.in.raid" : {
+              "pitch" : [ 0.60, 0.70 ],
+              "sound" : "mob.pillager.idle",
+              "volume" : 3.0
+           },
+           "celebrate" : "mob.pillager.celebrate",
+           "death" : "mob.pillager.death",
+           "hurt" : "mob.pillager.hurt"
+        },
+        "pitch" : [ 0.60, 0.7 ],
+        "volume" : 1.0
+      },
+      "goodlord:dragon_soldier" : {
+        "events" : {
+           "ambient" : "mob.pillager.idle",
+           "ambient.in.raid" : {
+              "pitch" : [ 0.70, 0.75 ],
+              "sound" : "mob.pillager.idle",
+              "volume" : 3.0
+           },
+           "celebrate" : "mob.pillager.celebrate",
+           "death" : "mob.pillager.death",
+           "hurt" : "mob.pillager.hurt"
+        },
+        "pitch" : [ 0.70, 0.75 ],
+        "volume" : 1.0
+      }
+    }
+  }
+}	  
+	  

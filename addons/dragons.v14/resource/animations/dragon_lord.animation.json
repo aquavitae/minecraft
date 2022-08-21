@@ -1,0 +1,113 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+    "animation.dragon_lord.attack": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [ "-68.75 * variable.attack2 + 22.92 * variable.attack", "-5.73 + variable.attack2 * 34.38 - this", 0.0 ]
+        },
+        "leftArm": {
+          "rotation": [ "-68.75 * variable.attack2 + 22.92 * variable.attack", "5.73 - variable.attack2 * 34.38 - this", 0.0 ]
+        }
+      }
+    },
+    "animation.dragon_lord.look_at_target" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				},
+        "hat" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				}
+			}
+		},
+    "animation.dragon_lord.move" : {
+			"loop" : true,
+			"bones" : {
+				"leftArm" : {
+					"rotation" : [ "variable.tcos0", 0.0, 0.0 ]
+				},
+				"leftLeg" : {
+					"rotation" : [ "variable.tcos0 * -1.4", 0.0, 0.0 ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-variable.tcos0", 0.0, 0.0 ]
+				},
+				"rightLeg" : {
+					"rotation" : [ "variable.tcos0 * 1.4", 0.0, 0.0 ]
+				}
+			}
+		},
+    "animation.dragon_lord.get_in_bed" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"position" : [ 0.0, -21.0, 8.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "hat" : {
+					"position" : [ 0.0, -21.0, 8.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "leftArm" : {
+					"position" : [ 0.0, -19.0, 6.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "rightArm" : {
+					"position" : [ 0.0, -19.0, 6.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "leftLeg" : {
+					"position" : [ 0.0, -9.0, -4.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "rightLeg" : {
+					"position" : [ 0.0, -9.0, -4.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				},
+        "body" : {
+					"position" : [ 0.0, -21.0, 8.0 ],
+					"rotation" : [ -90.0, 0.0, 0.0 ]
+				}
+			}
+		},
+    "animation.dragon_lord.ride" : {
+			"bones" : {
+        "head" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "hat" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "body" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+				"leftArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+				"rightArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+        "leftLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, -18.0 , 0 ]
+				},
+				"rightLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, 18.0 , 0 ]
+				}
+			},
+			"loop" : true
+		}
+	}
+}

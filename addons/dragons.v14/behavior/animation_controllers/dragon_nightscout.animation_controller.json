@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dragon_nightscout": {
+			"initial_state" : "waiting",
+      "states": {
+        "waiting": {
+					"transitions": [
+						{
+							"oh_boy": "!query.is_alive"
+						}
+					]
+        },
+        "oh_boy": {
+          "on_entry": [
+            "/execute @p ~ ~ ~ setblock ~1 ~-2 ~-1 barrel",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 2 diamond_boots",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 1 bread 5",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 8 bread 12",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 3 diamond_sword",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 11 netherite_ingot 2",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 12 clock",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 18 apple 5",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 20 emerald 7",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 22 diamond 10",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 23 book 3",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 24 iron_ingot 13",
+            "/execute @p ~ ~ ~ replaceitem block ~2 ~-3 ~3 slot.container 26 gold_ingot 11",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_execute ~8 ~2 ~-7",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~6 ~2 ~-2",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~5 ~2 ~-5",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~7 ~2 ~3",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~7 ~2 ~-1",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~6 ~2 ~-1",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~-7 ~2 ~3",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~-7 ~2 ~-3",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~-6 ~2 ~3",
+            "/execute @p ~ ~ ~ summon goodlord:dragon_nightsoldier ~9 ~2 ~1"
+          ]
+        }
+      }
+    }
+  }
+}

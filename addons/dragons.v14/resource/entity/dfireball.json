@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "goodlord:dfireball",
+			"materials": {
+				"default": "spider"
+			},
+			"textures": {
+				"default": "textures/entity/dragon_fire/dfireball"
+			},
+			"geometry": {
+				"default": "geometry.dfireball"
+			},
+      "animations": {
+        "move": "animation.dfireball.move"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.dfireball.move" }
+      ],
+      "particle_effects": {
+        "smoke_puff": "goodlord:dsmoke_puff"
+      },
+			"render_controllers": [
+				"controller.render.dfireball"
+			]
+		}
+	}
+}

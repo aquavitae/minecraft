@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "header": {
+    "name": "Dragons (behavior)",
+    "description": "Can't stand the heat?!??",
+    "uuid": "ad55d20a-2211-479e-aa54-8a26ba224455",
+    "version": [6, 7, 47]    
+  },
+  "modules": [
+    {
+      "description": "Dragons",
+      "type": "data",
+      "uuid": "d29f3147-eb13-498f-a1b2-f26a0f096b6c",
+      "version": [6, 7, 47]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "6181ad98-68b8-41ca-abf2-d50a560e5b26",
+      "version": [6, 7, 47]
+    }
+  ]
+}

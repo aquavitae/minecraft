@@ -1,0 +1,80 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.scout.blow_horn" : {
+			"bones" : {
+				"rightArm" : {
+					"rotation" : [ -75 , -40.0, 0.0 ]
+				},
+        "horn" : {
+					"rotation" : [ -65 , 5.0, 30.0 ]
+				}
+			},
+			"loop" : true
+		},
+		"animation.scout.move" : {
+			"loop" : true,
+			"bones": {
+				"leftArm" : {
+					"rotation" : [ "-variable.tcos_left_side", 0.0, 0.0 ]
+				},
+				"leftLeg" : {
+					"rotation" : [ "variable.tcos_left_side * 1.4", 0.0, 0.0 ]
+				},
+				"rightArm" : {
+					"rotation" : [ "-variable.tcos_right_side", 0.0, 0.0 ]
+				},
+				"rightLeg" : {
+					"rotation" : [ "variable.tcos_right_side * 1.4", 0.0, 0.0 ]
+				}
+			}
+		},
+    "animation.scout.look_at_target" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				},
+        "hat" : {
+					"relative_to" : {
+						"rotation" : "entity"
+					},
+					"rotation" : [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ]
+				}
+			}
+		},
+    "animation.scout.ride" : {
+			"bones" : {
+        "head" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "hat" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+        "body" : {
+          "position" : [ 0.0, -8.0 , 0 ]
+				},
+				"leftArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+				"rightArm" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -40.0, 0.0, 0.0 ]
+				},
+        "leftLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, -18.0 , 0 ]
+				},
+				"rightLeg" : {
+          "position" : [ 0.0, -8.0 , 0 ],
+					"rotation" : [ -75.0, 18.0 , 0 ]
+				}
+			},
+			"loop" : true
+		}
+	}
+}

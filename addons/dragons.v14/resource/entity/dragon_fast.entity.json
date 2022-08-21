@@ -1,0 +1,69 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_fast",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "normal": "textures/entity/dragon_fast/dragon_fast_normal",
+        "dragon_fast_can_tame": "textures/entity/dragon_fast/dragon_fast",
+        "dragon_fast_can_tame_saddled": "textures/entity/dragon_fast/dragon_fast_saddle",
+        "armored": "textures/entity/dragon_fast/dragon_fast_armour",
+        "armoredsaddled": "textures/entity/dragon_fast/dragon_fast_saddle_armour",
+        "dragon_fast_can_tame2": "textures/entity/dragon_fast/dragon_fast2",
+        "dragon_fast_can_tame_saddled2": "textures/entity/dragon_fast/dragon_fast2_saddle",
+        "armored2": "textures/entity/dragon_fast/dragon_fast2_armour",
+        "armoredsaddled2": "textures/entity/dragon_fast/dragon_fast2_saddle_armour",
+        "dragon_fast_can_tame3": "textures/entity/dragon_fast/dragon_fast3",
+        "dragon_fast_can_tame_saddled3": "textures/entity/dragon_fast/dragon_fast3_saddle",
+        "armored3": "textures/entity/dragon_fast/dragon_fast3_armour",
+        "armoredsaddled3": "textures/entity/dragon_fast/dragon_fast3_saddle_armour",
+        "dragon_fast_can_tame4": "textures/entity/dragon_fast/dragon_fast4",
+        "dragon_fast_can_tame_saddled4": "textures/entity/dragon_fast/dragon_fast4_saddle",
+        "armored4": "textures/entity/dragon_fast/dragon_fast4_armour",
+        "armoredsaddled4": "textures/entity/dragon_fast/dragon_fast4_saddle_armour",
+        "dragon_fast_can_tame5": "textures/entity/dragon_fast/dragon_fast5",
+        "dragon_fast_can_tame_saddled5": "textures/entity/dragon_fast/dragon_fast5_saddle",
+        "armored5": "textures/entity/dragon_fast/dragon_fast5_armour",
+        "armoredsaddled5": "textures/entity/dragon_fast/dragon_fast5_saddle_armour"
+      },
+      "geometry": {
+        "default": "geometry.dragon_fast"
+      },
+      "scripts": {
+        "pre_animation": [
+           "variable.dragon_fast.attack = query.has_target && !query.is_sitting && !query.has_rider;",
+           "variable.dragon_fast.sitting = query.is_sitting;"
+        ]
+      },
+      "animations": {
+        "walk": "animation.dragon_fast.walk",
+        "legs": "animation.dragon_fast.legs",
+        "sit": "animation.dragon_fast.sit",
+        "fly": "animation.dragon_fast.fly",
+        "swim": "animation.dragon_fast.swim",
+        "attack": "animation.dragon_fast.attack",
+        "look_at_target": "animation.dragon_fast.look_at_target",
+        "blink": "animation.dragon_fast.blink",
+        "breathe": "animation.dragon_fast.breathe",
+        "baby_transform": "animation.dragon_fast.baby_transform"
+      },
+      "animation_controllers": [
+        { "breathe": "controller.animation.dragon_fast.breathe" },
+        { "blink": "controller.animation.dragon_fast.blink" },
+        { "move": "controller.animation.dragon_fast.move" },
+        { "look_at_target": "controller.animation.dragon_fast.look_at_target" },
+        { "baby": "controller.animation.dragon_fast.baby" }
+      ],
+      "render_controllers": [
+        "controller.render.dragon_fast"
+      ],
+      "spawn_egg": {
+        "base_color": "#878686",
+        "overlay_color": "#fcfbfb"
+      }
+    }
+  }
+}

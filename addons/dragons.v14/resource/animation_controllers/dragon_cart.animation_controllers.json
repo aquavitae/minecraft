@@ -1,0 +1,126 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+    "controller.animation.dragon_cart.look_at_target" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "look_at_target" ]
+				}
+			}
+		},
+    "controller.animation.dragon_cart.breathe" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"breathe" : "query.is_on_ground && !query.is_in_water"
+						}
+					]
+				},
+				"breathe" : {
+					"animations" : [ "breathe" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_on_ground"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_cart.blink" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "blink" ]
+				}
+			}
+		},
+    "controller.animation.dragon_cart.roll" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [
+            {
+							"roll" : "query.is_on_ground && query.modified_move_speed"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.dragon_cart.move" : {
+			"initial_state" : "walking",
+			"states" : {
+				"walking" : {
+					"animations" : [
+            {
+							"walk" : "query.is_on_ground && query.modified_move_speed"
+						} 
+            ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_cart.attack"
+						},
+            {
+							"flying" : "!query.is_on_ground && !query.is_in_water"
+						},
+						{
+							"attack" : "variable.dragon_cart.attack"
+						}
+					]
+				},
+				"attack" : {
+					"animations" : [ "attack" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_cart.attack"
+						},
+            {
+							"walking" : "!variable.dragon_cart.attack"
+						},
+						{
+							"flying" : "!query.is_on_ground && !variable.dragon_cart.attack && !query.is_in_water"
+						}
+					]
+				},
+        "swimming" : {
+					"animations" : [ "swim" ],
+          "blend_transition" : 0.2,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"walking" : "!query.is_in_water"
+						},
+						{
+							"flying" : "!query.is_on_ground && !variable.dragon_cart.attack && !query.is_in_water"
+						},
+						{
+							"attack" : "variable.dragon_cart.attack"
+						}
+					]
+				},
+				"flying" : {
+					"animations" : [ "fly" ],
+          "blend_transition" : 1.0,
+          "blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"swimming" : "query.is_in_water && !variable.dragon_cart.attack"
+						},
+            {
+							"walking" : "query.is_on_ground && query.modified_move_speed"
+						},
+						{
+							"attack" : "variable.dragon_cart.attack"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "goodlord:dragon_fast",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 7,
+          "max": 14,
+          "adjust_for_weather": true
+        },
+        "minecraft:weight": {
+          "default": 11
+        },
+        "minecraft:herd": {
+          "min_size":1,
+          "max_size":1
+        },
+        "minecraft:height_filter": {
+          "min": 68,
+          "max": 135
+        },
+        "minecraft:biome_filter": {
+          "all_of": [
+            {"test": "has_biome_tag", "operator":"==", "value": "jagged_peaks"}
+          ]
+        }
+      }
+    ]
+  }
+}

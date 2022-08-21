@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "goodlord:scout_camp",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [ "camp" ]
+      },
+      "animations": {
+        "camp": "controller.animation.scout_camp"
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "monster", "camp" ]
+      },
+      "minecraft:health": {
+        "value": 3
+      },
+      "minecraft:physics": {
+      }
+    }
+  }
+}

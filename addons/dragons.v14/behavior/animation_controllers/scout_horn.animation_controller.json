@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scout_horn": {
+      "states": {
+        "walking": {
+          "on_entry": [
+            "/execute @e[type=goodlord:scout_horn] ~ ~ ~ summon goodlord:scout_camp ~11 ~ ~"
+          ]
+        }
+      }
+    }
+  }
+}

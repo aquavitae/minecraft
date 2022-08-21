@@ -1,0 +1,97 @@
+{
+	"format_version" : "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dragon_soldier.attack": {
+      "initial_state": "default",
+      "states": {
+        "charge": {
+          "animations": [ "crossbow_charge" ],
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            },
+            {
+              "hold": "query.has_target"
+            }
+          ]
+        },
+        "default": {
+          "transitions": [
+            {
+              "hold": "query.has_target"
+            },
+            {
+              "charge": "query.is_charging"
+            }
+          ]
+        },
+        "hold": {
+          "animations": [ "crossbow_hold" ],
+          "transitions": [
+            {
+              "default": "!query.has_target"
+            },
+            {
+              "charge": "query.is_charging"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.dragon_soldier.riding" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"riding" : "query.is_riding"
+						}
+					]
+				},
+				"riding" : {
+					"animations" : [ "ride" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_riding"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_soldier.root": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          "animations": [
+            "controller_humanoid_base_pose",
+            "controller_look_at_target",
+            "controller_move",
+            "controller_riding",
+            "controller_attack",
+            "controller_bob",
+            "controller_pillager_attack"
+          ],
+          "transitions": [
+            {
+              "celebrating": "query.is_celebrating"
+            }
+          ]
+        },
+        "celebrating": {
+          "animations": [
+            "celebrating"
+          ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          "transitions": [
+            {
+              "default": "!query.is_celebrating"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.dragon_trap.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"shut" : {
+					"animations" : [ "shut" ],
+          "blend_transition" : 0.2,
+					"transitions" : [
+						{
+							"default" : "!query.has_rider"
+						}
+					]
+				},
+				"default" : {
+          "blend_transition" : 0.2,
+					"transitions" : [
+						{
+							"shut" : "query.has_rider"
+						}
+					]
+				}
+			}
+		}
+	}
+}

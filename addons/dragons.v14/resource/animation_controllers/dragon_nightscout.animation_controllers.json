@@ -1,0 +1,62 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.dragon_nightscout.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "move" ]
+				}
+			}
+		},
+		"controller.animation.dragon_nightscout.look_at_target" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "look_at_target" ]
+				}
+			}
+		},
+		"controller.animation.dragon_nightscout.blow_horn" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "arm" ],
+					"transitions" : [
+						{
+							"blow_horn" : "query.has_target"
+						}
+					]
+				},
+				"blow_horn" : {
+					"animations" : [ "blow_horn" ],
+					"transitions" : [
+						{
+							"default" : "!query.has_target"
+						}
+					]
+				}
+			}
+		},
+    "controller.animation.dragon_nightscout.riding" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"transitions" : [
+						{
+							"riding" : "query.is_riding"
+						}
+					]
+				},
+				"riding" : {
+					"animations" : [ "ride" ],
+					"transitions" : [
+						{
+							"default" : "!query.is_riding"
+						}
+					]
+				}
+			}
+		}
+	}
+}

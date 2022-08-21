@@ -1,0 +1,56 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.scout_camp": {
+      "states": {
+        "walking": {
+          "on_entry": [
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~28 ~-1 ~5 ~20 ~4 ~-10 air",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~28 ~-1 ~5 ~20 ~-1 ~-10 log",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~19 ~-2 ~2 ~19 ~-2 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~18 ~-3 ~2 ~18 ~-3 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~17 ~-4 ~2 ~17 ~-4 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~16 ~-5 ~2 ~16 ~-5 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~15 ~-6 ~2 ~15 ~-6 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~14 ~-7 ~2 ~14 ~-7 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~13 ~-8 ~2 ~13 ~-8 ~3 log 0 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~28 ~-29 ~5 ~28 ~-2 ~5 fence 1 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~28 ~-29 ~-10 ~28 ~-2 ~-10 fence 1 keep ",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~20 ~-29 ~-10 ~20 ~-2 ~-10 fence 1 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ fill ~20 ~-29 ~5 ~20 ~-2 ~5 fence 1 keep",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ setblock ~25 ~ ~1 campfire",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ setblock ~27 ~ ~3 anvil",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ setblock ~25 ~ ~3 barrel",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 1 iron_boots",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 3 netherite_ingot",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 6 bread 3",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 7 bone 14",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 15 bread 2",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 17 iron_sword",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 18 apple",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 20 emerald 4",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 22 stone_sword",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 23 book",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 24 iron_ingot 12",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ replaceitem block ~25 ~ ~3 slot.container 26 gold_ingot 4",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dtent ~25 ~ ~-3",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:pig_on_spit ~24 ~ ~1",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_armourer ~28 ~ ~4",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_armourer ~21 ~ ~-8",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_lord ~25 ~ ~-3",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~25 ~ ~-2",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~21 ~1 ~5",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~22 ~1 ~3",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~22 ~1 ~-1",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~22 ~1 ~1",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~22 ~1 ~-2",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~21 ~1 ~3",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_soldier ~27 ~1 ~1",
+            "/execute @e[type=goodlord:scout_camp] ~ ~ ~ summon goodlord:dragon_wizard ~26 ~1 ~5",
+            "/kill @e[type=goodlord:scout_camp,r=10]"
+          ]
+        }
+      }
+    }
+  }
+}
