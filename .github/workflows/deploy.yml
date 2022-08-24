@@ -27,11 +27,19 @@ jobs:
       - name: Run a multi-line script
         shell: bash
         env:
-          ORACLE_KEY: ${{ secrets.ORACLE_KEY }}
-          ORACLE_SERVER: ${{ secrets.ORACLE_SERVER }}
+          RCLONE_FTP_USER: ${{ secrets.RCLONE_FTP_USER }}
+          RCLONE_FTP_HOST: ${{ secrets.RCLONE_FTP_HOST }}
+          RCLONE_FTP_PORT: ${{ secrets.RCLONE_FTP_PORT }}
+          RCLONE_FTP_PASS: ${{ secrets.RCLONE_FTP_PASS }}
         run: |
-          echo "$ORACLE_KEY" > oracle.key
-          chmod 400 oracle.key
-          scp -i oracle.key -o StrictHostKeyChecking=No ./install.sh "$ORACLE_SERVER:/home/ubuntu/install.sh"
-          ssh -i oracle.key -o StrictHostKeyChecking=No "$ORACLE_SERVER" bash /home/ubuntu/install.sh
-          rm -f oracle.key
+          curl https://rclone.org/install.sh | sudo bash
+
+          rclone sync -i ./behavior behavior_packs/Pets
+
+          for f in addons/*; do
+            rclone sync -i ./addons/$f/behavior behavior_packs/$f
+            rclone sync -i ./addons/$f/resource resource_packs/$f
+          done
+
+          rclone copy world worlds/Legoland
+          rclone copy settings .
