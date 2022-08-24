@@ -34,12 +34,12 @@ jobs:
         run: |
           curl https://rclone.org/install.sh | sudo bash
 
-          rclone sync -i ./behavior behavior_packs/Pets
+          rclone :ftp: sync -i ./behavior behavior_packs/Pets
 
           for f in addons/*; do
-            rclone sync -i ./addons/$f/behavior behavior_packs/$f
-            rclone sync -i ./addons/$f/resource resource_packs/$f
+            rclone :ftp: sync -i ./addons/$f/behavior behavior_packs/$f
+            rclone :ftp: sync -i ./addons/$f/resource resource_packs/$f
           done
 
-          rclone copy world worlds/Legoland
-          rclone copy settings .
+          rclone :ftp: copy world worlds/Legoland
+          rclone :ftp: copy settings .
