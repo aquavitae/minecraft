@@ -36,6 +36,7 @@ jobs:
 
           export RCLONE_FTP_PASS=$(rclone obscure "$PLAIN_PASSWORD")
           rclone lsf :ftp:
+          rclone mkdir :ftp:behavior_packs/Pets
           rclone sync -i ./behavior :ftp:behavior_packs/Pets
 
           for f in addons/*; do
