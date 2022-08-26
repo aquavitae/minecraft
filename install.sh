@@ -7,8 +7,8 @@ curl https://rclone.org/install.sh | sudo bash
 
 export RCLONE_FTP_PASS=$(rclone obscure "$PLAIN_PASSWORD")
 
-rclone purge :ftp:development_behavior_packs
-rclone purge :ftp:development_resource_packs
+rclone purge --ignore-errors :ftp:development_behavior_packs
+rclone purge --ignore-errors :ftp:development_resource_packs
 rclone mkdir :ftp:development_behavior_packs
 rclone mkdir :ftp:development_resource_packs
 
