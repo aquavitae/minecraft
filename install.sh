@@ -3,25 +3,17 @@
 set -e -o pipefail
 set -v
 
-rm -rf $HOME/minecraft
-git clone https://github.com/aquavitae/minecraft.git
-cd $HOME/minecraft
+curl https://rclone.org/install.sh | sudo bash
 
-target="$HOME/minecraftbe/mycraft"
+export RCLONE_FTP_PASS=$(rclone obscure "$PLAIN_PASSWORD")
 
-rm -rf "$target/behavior_packs/Pets"
-rm -rf "$target/behavior_packs/dragons.v14"
-rm -rf "$target/resource_packs/dragons.v14"
+rclone mkdir :ftp:behavior_packs/Pets
+rclone sync ./behavior :ftp:behavior_packs/Pets
 
-cp -r ./behavior "$target/behavior_packs/Pets"
-cp -r ./addons/dragons.v14/behavior "$target/behavior_packs/dragons.v14"
-cp -r ./addons/dragons.v14/resource "$target/resource_packs/dragons.v14"
+for f in addons/*; do
+    rclone sync ./addons/$f/behavior :ftp:behavior_packs/$f
+    rclone sync ./addons/$f/resource :ftp:resource_packs/$f
+done
 
-cp -r ./world/* "$target/worlds/Legoland"
-
-cp ./settings/* "$target"
-
-cd $HOME
-rm -rf minecraft
-
-$target/restart.sh
+rclone copy world :ftp:worlds/Legoland
+rclone copy settings :ftp:

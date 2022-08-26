@@ -31,18 +31,4 @@ jobs:
           RCLONE_FTP_HOST: ${{ secrets.RCLONE_FTP_HOST }}
           RCLONE_FTP_PORT: ${{ secrets.RCLONE_FTP_PORT }}
           PLAIN_PASSWORD: ${{ secrets.RCLONE_FTP_PASS }}
-        run: |
-          curl https://rclone.org/install.sh | sudo bash
-
-          export RCLONE_FTP_PASS=$(rclone obscure "$PLAIN_PASSWORD")
-          rclone lsf :ftp:
-          rclone mkdir :ftp:behavior_packs/Pets
-          rclone sync -i ./behavior :ftp:behavior_packs/Pets
-
-          for f in addons/*; do
-            rclone sync -i ./addons/$f/behavior :ftp:behavior_packs/$f
-            rclone sync -i ./addons/$f/resource :ftp:resource_packs/$f
-          done
-
-          rclone copy world :ftp:worlds/Legoland
-          rclone copy settings :ftp:
+        run: bash install.sh
