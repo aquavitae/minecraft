@@ -16,8 +16,10 @@ rclone mkdir :ftp:development_behavior_packs/Pets
 rclone copy behavior :ftp:development_behavior_packs/Pets || echo "ok"
 
 for f in addons/*; do
-    rclone copy ./addons/$f/behavior :ftp:development_behavior_packs/$f || echo "ok"
-    rclone copy ./addons/$f/resource :ftp:development_resource_packs/$f || echo "ok"
+  rclone mkdir :ftp:development_behavior_packs/$f
+  rclone copy ./addons/$f/behavior :ftp:development_behavior_packs/$f || echo "ok"
+  rclone mkdir :ftp:development_behavior_packs/$f
+  rclone copy ./addons/$f/resource :ftp:development_resource_packs/$f || echo "ok"
 done
 
 rclone copy world :ftp:worlds/Legoland || echo "ok"
