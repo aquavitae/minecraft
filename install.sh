@@ -15,7 +15,8 @@ rclone mkdir :ftp:development_resource_packs || echo "ok"
 rclone mkdir :ftp:development_behavior_packs/Pets
 rclone copy behavior :ftp:development_behavior_packs/Pets || echo "ok"
 
-for f in addons/*; do
+for path in addons/*; do
+  f="$(basename $path)"
   rclone mkdir :ftp:development_behavior_packs/$f
   rclone copy ./addons/$f/behavior :ftp:development_behavior_packs/$f || echo "ok"
   rclone mkdir :ftp:development_behavior_packs/$f
