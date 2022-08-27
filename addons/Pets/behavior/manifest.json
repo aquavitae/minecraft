@@ -1,19 +1,24 @@
 {
   "format_version": 2,
   "header": {
-    "description": "Pets",
+    "description": "Pets (Behavior)",
     "name": "Addons for Pets",
     "uuid": "09eceade-ccd8-4235-87cb-b36d35339c01",
     "version": [1, 0, 0],
     "min_engine_version": [1, 16, 0]
   },
-  "modules":
-    [
-      {
-        "description": "Pets",
-          "type": "data",
-          "uuid": "f7608b6f-8a1e-4ee4-9d85-434e096b6f57",
-          "version": [1, 0, 0]
-      }
-    ]
+  "modules": [
+    {
+      "description": "Pets (Behavior)",
+      "type": "data",
+      "uuid": "f7608b6f-8a1e-4ee4-9d85-434e096b6f57",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "6a04bc02-5261-4c03-b6f1-f0815081a879",
+      "version": [1, 0, 0]
+    }
+  ]
 }

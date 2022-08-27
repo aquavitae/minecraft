@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Pets (Resource)",
+    "name": "Addons for Pets",
+    "uuid": "6a04bc02-5261-4c03-b6f1-f0815081a879",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "description": "Pets (Resource)",
+      "type": "data",
+      "uuid": "148cb48e-1a81-445d-a9bf-5e3e9a4e76e9",
+      "version": [1, 0, 0]
+    }
+  ]
+}
