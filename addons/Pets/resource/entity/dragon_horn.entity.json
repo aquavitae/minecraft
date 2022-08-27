@@ -1,0 +1,72 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_horn",
+      "materials": {
+        "default": "spider"
+      },
+      "textures": {
+        "dragon0": "textures/entity/dragon_horn/dragon_horn_black",
+        "dragon0_saddled": "textures/entity/dragon_horn/dragon_horn_black_saddle",
+        "dragon0_armored": "textures/entity/dragon_horn/dragon_horn_black_armour",
+        "dragon0_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_black_saddle_armour",
+        "dragon1": "textures/entity/dragon_horn/dragon_horn_green",
+        "dragon1_saddled": "textures/entity/dragon_horn/dragon_horn_green_saddle",
+        "dragon1_armored": "textures/entity/dragon_horn/dragon_horn_green_armour",
+        "dragon1_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_green_saddle_armour",
+        "dragon2": "textures/entity/dragon_horn/dragon_horn_grey",
+        "dragon2_saddled": "textures/entity/dragon_horn/dragon_horn_grey_saddle",
+        "dragon2_armored": "textures/entity/dragon_horn/dragon_horn_grey_armour",
+        "dragon2_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_grey_saddle_armour",
+        "dragon3": "textures/entity/dragon_horn/dragon_horn_purple",
+        "dragon3_saddled": "textures/entity/dragon_horn/dragon_horn_purple_saddle",
+        "dragon3_armored": "textures/entity/dragon_horn/dragon_horn_purple_armour",
+        "dragon3_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_purple_saddle_armour",
+        "dragon4": "textures/entity/dragon_horn/dragon_horn_red",
+        "dragon4_saddled": "textures/entity/dragon_horn/dragon_horn_red_saddle",
+        "dragon4_armored": "textures/entity/dragon_horn/dragon_horn_red_armour",
+        "dragon4_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_red_saddle_armour",
+        "dragon5": "textures/entity/dragon_horn/dragon_horn_red2",
+        "dragon5_saddled": "textures/entity/dragon_horn/dragon_horn_red2_saddle",
+        "dragon5_armored": "textures/entity/dragon_horn/dragon_horn_red2_armour",
+        "dragon5_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_red2_saddle_armour"
+      },
+      "geometry": {
+        "default": "geometry.dragon_horn"
+      },
+      "scripts": {
+        "pre_animation": [
+           "variable.dragon_horn.attack = query.has_target && !query.is_sitting && !query.has_rider;",
+           "variable.dragon_horn.sitting = query.is_sitting;"
+        ]
+      },
+      "animations": {
+        "walk": "animation.dragon_horn.walk",
+        "legs": "animation.dragon_horn.legs",
+        "sit": "animation.dragon_horn.sit",
+        "fly": "animation.dragon_horn.fly",
+        "swim": "animation.dragon_horn.swim",
+        "attack": "animation.dragon_horn.attack",
+        "look_at_target": "animation.dragon_horn.look_at_target",
+        "blink": "animation.dragon_horn.blink",
+        "breathe": "animation.dragon_horn.breathe",
+        "baby_transform": "animation.dragon_horn.baby_transform"
+      },
+      "animation_controllers": [
+        { "breathe": "controller.animation.dragon_horn.breathe" },
+        { "blink": "controller.animation.dragon_horn.blink" },
+        { "move": "controller.animation.dragon_horn.move" },
+        { "look_at_target": "controller.animation.dragon_horn.look_at_target" },
+        { "baby": "controller.animation.dragon_horn.baby" }
+      ],
+      "render_controllers": [
+        "controller.render.dragon_horn"
+      ],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#550005"
+      }
+    }
+  }
+}

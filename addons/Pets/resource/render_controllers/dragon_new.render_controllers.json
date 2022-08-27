@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.dragon_new": {
+      "arrays": {
+        "textures": {
+          "Array.normal": [ "Texture.dragon0", "Texture.dragon1", "Texture.dragon2", "Texture.dragon3", "Texture.dragon4", "Texture.dragon5" ],
+          "Array.saddled": [ "Texture.dragon0_saddled", "Texture.dragon1_saddled", "Texture.dragon2_saddled", "Texture.dragon3_saddled", "Texture.dragon4_saddled", "Texture.dragon5_saddled" ],
+          "Array.armored": [ "Texture.dragon0_armored", "Texture.dragon1_armored", "Texture.dragon2_armored", "Texture.dragon3_armored", "Texture.dragon4_armored", "Texture.dragon5_armored" ],
+          "Array.saddledarmored": [ "Texture.dragon0_armoredsaddled", "Texture.dragon1_armoredsaddled", "Texture.dragon2_armoredsaddled", "Texture.dragon3_armoredsaddled", "Texture.dragon4_armoredsaddled", "Texture.dragon5_armoredsaddled" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ 
+        "query.is_sheared && query.is_saddled ? Array.saddledarmored[query.variant] : (query.is_sheared ? Array.armored[query.variant] : (query.is_saddled ? Array.saddled[query.variant] : Array.normal[query.variant]))"
+      ]
+    }
+  }
+}

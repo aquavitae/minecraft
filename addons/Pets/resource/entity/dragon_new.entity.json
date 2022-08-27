@@ -1,0 +1,72 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "goodlord:dragon_new",
+      "materials": {
+        "default": "cat"
+      },
+      "textures": {
+        "dragon0": "textures/entity/dragon_new/dragon_new",
+        "dragon0_saddled": "textures/entity/dragon_new/dragon_new_saddle",
+        "dragon0_armored": "textures/entity/dragon_new/dragon_new_armour",
+        "dragon0_armoredsaddled": "textures/entity/dragon_new/dragon_new_saddle_armour",
+        "dragon1": "textures/entity/dragon_new/dragon_new2",
+        "dragon1_saddled": "textures/entity/dragon_new/dragon_new2_saddle",
+        "dragon1_armored": "textures/entity/dragon_new/dragon_new2_armour",
+        "dragon1_armoredsaddled": "textures/entity/dragon_new/dragon_new2_saddle_armour",
+        "dragon2": "textures/entity/dragon_new/dragon_new3",
+        "dragon2_saddled": "textures/entity/dragon_new/dragon_new3_saddle",
+        "dragon2_armored": "textures/entity/dragon_new/dragon_new3_armour",
+        "dragon2_armoredsaddled": "textures/entity/dragon_new/dragon_new3_saddle_armour",
+        "dragon3": "textures/entity/dragon_new/dragon_new4",
+        "dragon3_saddled": "textures/entity/dragon_new/dragon_new4_saddle",
+        "dragon3_armored": "textures/entity/dragon_new/dragon_new4_armour",
+        "dragon3_armoredsaddled": "textures/entity/dragon_new/dragon_new4_saddle_armour",
+        "dragon4": "textures/entity/dragon_new/dragon_new5",
+        "dragon4_saddled": "textures/entity/dragon_new/dragon_new5_saddle",
+        "dragon4_armored": "textures/entity/dragon_new/dragon_new5_armour",
+        "dragon4_armoredsaddled": "textures/entity/dragon_new/dragon_new5_saddle_armour",
+        "dragon5": "textures/entity/dragon_new/dragon_new6",
+        "dragon5_saddled": "textures/entity/dragon_new/dragon_new6_saddle",
+        "dragon5_armored": "textures/entity/dragon_new/dragon_new6_armour",
+        "dragon5_armoredsaddled": "textures/entity/dragon_new/dragon_new6_saddle_armour"
+      },
+      "geometry": {
+        "default": "geometry.dragon_new"
+      },
+      "scripts": {
+        "pre_animation": [
+           "variable.dragon_new.attack = query.has_target && !query.is_sitting && !query.has_rider;",
+           "variable.dragon_new.sitting = query.is_sitting;"
+        ]
+      },
+      "animations": {
+        "walk": "animation.dragon_new.walk",
+        "legs": "animation.dragon_new.legs",
+        "sit": "animation.dragon_new.sit",
+        "fly": "animation.dragon_new.fly",
+        "swim": "animation.dragon_new.swim",
+        "attack": "animation.dragon_new.attack",
+        "look_at_target": "animation.dragon_new.look_at_target",
+        "blink": "animation.dragon_new.blink",
+        "breathe": "animation.dragon_new.breathe",
+        "baby_transform": "animation.dragon_new.baby_transform"
+      },
+      "animation_controllers": [
+        { "breathe": "controller.animation.dragon_new.breathe" },
+        { "blink": "controller.animation.dragon_new.blink" },
+        { "move": "controller.animation.dragon_new.move" },
+        { "look_at_target": "controller.animation.dragon_new.look_at_target" },
+        { "baby": "controller.animation.dragon_new.baby" }
+      ],
+      "render_controllers": [
+        "controller.render.dragon_new"
+      ],
+	  "spawn_egg": {
+        "base_color": "#541d1d",
+        "overlay_color": "#8a2f2f"
+      }
+    }
+  }
+}
