@@ -7,6 +7,10 @@
         "default": "spider"
       },
       "textures": {
+        "dragonx0": "textures/entity/dragon_horn/dragon_horn_red2",
+        "dragonx0_saddled": "textures/entity/dragon_horn/dragon_horn_red2_saddle",
+        "dragonx0_armored": "textures/entity/dragon_horn/dragon_horn_red2_armour",
+        "dragonx0_armoredsaddled": "textures/entity/dragon_horn/dragon_horn_red2_saddle_armour",
         "dragon0": "textures/entity/dragon_horn/dragon_horn_black",
         "dragon0_saddled": "textures/entity/dragon_horn/dragon_horn_black_saddle",
         "dragon0_armored": "textures/entity/dragon_horn/dragon_horn_black_armour",

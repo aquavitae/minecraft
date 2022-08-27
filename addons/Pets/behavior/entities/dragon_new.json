@@ -48,8 +48,8 @@
                   { "test" :  "is_family", "subject" : "other", "value" :  "rabbit" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "dragon_hunter" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "husk" }
-                ] 
-              },	  
+                ]
+              },
               "max_dist": 32
             }
           ],
@@ -149,7 +149,7 @@
                 "all_of": [
                   { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "dragon"},
                   { "test": "is_underwater", "subject": "other", "operator": "!=", "value": true }
-                ] 
+                ]
               }
             }
           ]
@@ -162,7 +162,7 @@
                 "all_of": [
                   { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "dragon"},
                   { "test": "is_underwater", "subject": "other", "operator": "!=", "value": true }
-                ] 
+                ]
               }
             }
           ]
@@ -177,13 +177,13 @@
                   { "test" :  "is_family", "subject" : "other", "value" :  "wasp" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "dragon_hunter" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "husk" }
-                ] 
+                ]
               },
               "max_dist": 16
             }
           ],
           "must_see": true
-        },                 
+        },
         "minecraft:behavior.follow_owner": {
           "priority": 5,
           "speed_multiplier": 1.1,
@@ -215,8 +215,8 @@
                   { "test" :  "is_family", "subject" : "other", "value" :  "player" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "dragon_hunter" },
                   { "test" :  "is_family", "subject" : "other", "value" :  "husk" }
-                ] 
-              },	  
+                ]
+              },
               "max_dist": 32
             }
           ],
@@ -296,6 +296,9 @@
       "goodlord:dragon_v5": {
         "minecraft:variant": { "value": 5 }
       },
+      "goodlord:dragon_vx0": {
+        "minecraft:variant": { "value": 6 }
+      },
       "goodlord:dragon_s": {
         "minecraft:scale": {
           "value": 0.80
@@ -308,7 +311,7 @@
         },
         "minecraft:movement": {
           "value": {
-            "range_min": 0.9, 
+            "range_min": 0.9,
             "range_max": 0.95
           }
         },
@@ -331,7 +334,7 @@
         },
         "minecraft:movement": {
           "value": {
-            "range_min": 0.85, 
+            "range_min": 0.85,
             "range_max": 0.9
           }
         },
@@ -354,7 +357,7 @@
         },
         "minecraft:movement": {
           "value": {
-            "range_min": 0.8, 
+            "range_min": 0.8,
             "range_max": 0.85
           }
         },
@@ -377,7 +380,7 @@
         },
         "minecraft:movement": {
           "value": {
-            "range_min": 0.7, 
+            "range_min": 0.7,
             "range_max": 0.75
           }
         },
@@ -450,17 +453,17 @@
         "avoid_damage_blocks": true
       },
       "minecraft:movement.basic": {
-        
+
       },
       "minecraft:jump.static": {
       },
       "minecraft:nameable": {
       },
       "minecraft:can_climb": {
-      },                              
+      },
       "minecraft:horse.jump_strength": {
         "value": {
-          "range_min": 1.1, 
+          "range_min": 1.1,
           "range_max": 1.33
         }
       },
@@ -523,11 +526,11 @@
               "all_of": [
                 { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "dragon"},
                 { "test": "is_underwater", "subject": "other", "operator": "!=", "value": true }
-              ] 
+              ]
             }
           }
         ]
-      },                
+      },
       "minecraft:loot": {
         "table": "loot_tables/entities/dragon_new.json"
       },
@@ -585,6 +588,11 @@
               {
                 "weight": 5,
                 "add": { "component_groups": [ "goodlord:dragon_v5" ]
+                }
+              },
+              {
+                "weight": 5,
+                "add": { "component_groups": [ "goodlord:dragon_vx0" ]
                 }
               }
             ]
@@ -669,7 +677,7 @@
         "add":{
           "component_groups": [
             "goodlord:dragon_add_ride"
-          ]                   
+          ]
         }
       },
       "goodlord:dragon_saddled": {

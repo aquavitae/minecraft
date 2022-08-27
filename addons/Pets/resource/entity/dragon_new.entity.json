@@ -7,6 +7,10 @@
         "default": "cat"
       },
       "textures": {
+        "dragonx0": "textures/entity/dragon_new/dragon_newx0",
+        "dragonx0_saddled": "textures/entity/dragon_new/dragon_newx0_saddle",
+        "dragonx0_armored": "textures/entity/dragon_new/dragon_newx0_armour",
+        "dragonx0_armoredsaddled": "textures/entity/dragon_new/dragon_newx0_saddle_armour",
         "dragon0": "textures/entity/dragon_new/dragon_new",
         "dragon0_saddled": "textures/entity/dragon_new/dragon_new_saddle",
         "dragon0_armored": "textures/entity/dragon_new/dragon_new_armour",
