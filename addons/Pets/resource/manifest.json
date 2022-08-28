@@ -10,7 +10,7 @@
   "modules": [
     {
       "description": "Pets (Resource)",
-      "type": "data",
+      "type": "resources",
       "uuid": "148cb48e-1a81-445d-a9bf-5e3e9a4e76e9",
       "version": [1, 0, 0]
     }
