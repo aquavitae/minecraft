@@ -17,18 +17,34 @@ function rc() {
   fi
 }
 
-rc purge :ftp:development_behavior_packs
-rc purge :ftp:development_resource_packs
-rc mkdir :ftp:development_behavior_packs
-rc mkdir :ftp:development_resource_packs
+# rc purge :ftp:development_behavior_packs
+# rc purge :ftp:development_resource_packs
+# rc mkdir :ftp:development_behavior_packs
+# rc mkdir :ftp:development_resource_packs
+
+function rccopy() {
+  local src
+  local dest
+  src=$1
+  dest=$2
+
+  for dir in $(find -type d "$src"); do
+    echo "Creating $dest/$dir"
+    # rc mkdir $dest/$dir
+  done
+
+  echo "Copy $src %dest"
+  # rc copy --retries=1 $src $dest
+
+}
 
 for path in addons/*; do
   f="$(basename $path)"
-  rc mkdir :ftp:development_behavior_packs/$f
-  rc copy --retries=1 ./addons/$f/behavior :ftp:development_behavior_packs/$f
-  rc mkdir :ftp:development_resource_packs/$f
-  rc copy --retries=1 ./addons/$f/resource :ftp:development_resource_packs/$f
+  # rc mkdir :ftp:development_behavior_packs/$f
+  rccopy ./addons/$f/behavior :ftp:development_behavior_packs/$f
+  # rc mkdir :ftp:development_resource_packs/$f
+  rccopy ./addons/$f/resource :ftp:development_resource_packs/$f
 done
 
-rc copy --retries=1 world :ftp:worlds/Legoland
-rc copy --retries=1 settings :ftp:
+rccopy world :ftp:worlds/Legoland
+rccopy settings :ftp:
