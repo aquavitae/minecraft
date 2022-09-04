@@ -28,12 +28,12 @@ function rccopy() {
   src=$1
   dest=$2
 
-  for dir in $(find -type d "$src"); do
+  for dir in $(find "$src" -type d ); do
     echo "Creating $dest/$dir"
     # rc mkdir $dest/$dir
   done
 
-  echo "Copy $src %dest"
+  echo "Copy $src $dest"
   # rc copy --retries=1 $src $dest
 
 }
