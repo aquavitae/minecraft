@@ -11,8 +11,8 @@ function rc() {
 
   echo ">>> rclone $@"
   output=$(rclone $@ 2>&1 | grep -P "^<3>ERROR : " | grep -v 'SetModTime: 550 Not enough privileges')
-  if [ output != "" ]; then
-    echo output
+  if [ "$output" != "" ]; then
+    echo "$output"
     return 1
   fi
 }
