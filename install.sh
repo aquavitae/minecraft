@@ -10,7 +10,7 @@ function rc() {
   set +eo pipefail
 
   echo ">>> rclone $@"
-  output=$(rclone $@ | grep -P "^<3>ERROR : " | grep -v 'SetModTime: 550 Not enough privileges')
+  output=$(rclone $@ 2>&1 | grep -P "^<3>ERROR : " | grep -v 'SetModTime: 550 Not enough privileges')
   if [ output != "" ]; then
     echo output
     return 1
